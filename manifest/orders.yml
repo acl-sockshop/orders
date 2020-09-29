@@ -4,12 +4,11 @@ kind: Deployment
 metadata:
   name: orders
   namespace: dev
-  labels:
-    name: orders
 spec:
   replicas: 1
-  matchLabels:
-    name: orders
+  selector:
+    matchLabels:
+      app: orders
   template:
     metadata:
       labels:
